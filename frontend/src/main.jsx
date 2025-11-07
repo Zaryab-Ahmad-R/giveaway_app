@@ -8,6 +8,7 @@ import ClaimPrize from './pages/ClaimPrize.jsx';
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import { SpeedInsights } from "@vercel/speed-insights/react"
+import { Analytics } from "@vercel/analytics/react"
 
 
 const router = createBrowserRouter([
@@ -37,6 +38,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* <App /> */}
     <SpeedInsights/>
+    <Analytics/>
     <RouterProvider router={router} />
   </StrictMode>,
 )
