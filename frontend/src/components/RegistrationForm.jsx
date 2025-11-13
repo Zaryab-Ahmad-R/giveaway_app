@@ -122,7 +122,7 @@ export default function RegistrationForm() {
           <input
             type="text"
             placeholder="Have you mentioned 3 friends on last post on Facebook?"
-            className="w-full border rounded h-16 p-3 text-[#E0D9D9] font-semibold outline-none sm:text-base leading-2"
+            className="w-full border rounded h-12 p-3 text-[#E0D9D9] font-semibold outline-none sm:text-base leading-2"
             {...register("friendsAskF", {
               required: "Required",
               pattern: {
@@ -194,7 +194,7 @@ export default function RegistrationForm() {
           <input
             type="text"
             placeholder="Have you mentioned 3 friends on last post on Instagram?"
-            className="w-full border rounded h-16 p-3 text-[#E0D9D9] font-semibold outline-none sm:text-base leading-2"
+            className="w-full border rounded h-12 p-3 text-[#E0D9D9] font-semibold outline-none sm:text-base leading-2"
             {...register("friendsAskI", {
               required: "Required",
               pattern: {
