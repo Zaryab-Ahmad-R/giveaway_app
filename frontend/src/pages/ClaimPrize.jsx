@@ -55,7 +55,7 @@ export default function ClaimPrize() {
     <>
       <div className="min-h-screen bg-[#2F5755]">
         <Navbar />
-        <section className="md:w-[75%] w-100% mx-auto bg-[#5A9690] shadow-md rounded-2xl p-6 mt-5">
+        <section className="md:w-[75%] w-[100%] mx-auto bg-[#5A9690] shadow-md rounded-2xl p-6 mt-5">
           <h2 className="text-2xl font-bold mb-4 text-center text-[#E0D9D9]">
             Claim Your Prize
           </h2>
