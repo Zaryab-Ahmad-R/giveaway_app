@@ -48,7 +48,7 @@ export default function RegistrationForm() {
   };
 
   return (
-    <section className="md:w-[75%] sm:w-[100%] mx-auto bg-[#5A9690] shadow-md rounded-2xl p-6 md:mt-5 sm:mt-6">
+    <section className="md:w-[75%] w-[100%] mx-auto bg-[#5A9690] shadow-md rounded-2xl p-6 mt-5">
       <h2 className="text-2xl font-bold mb-4 text-center text-[#E0D9D9]">Register for the Giveaway</h2>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
