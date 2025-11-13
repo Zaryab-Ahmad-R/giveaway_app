@@ -30,7 +30,7 @@ const Home = () => {
                 text="What Inspired These Giveaways"
                 className="md:text-5xl text-3xl font-bold text-center text-[#E0D9D9]"
                 delay={400}
-                duration={0.6}
+                duration={0.1}
                 ease="power3.out"
                 splitType="chars"
                 from={{ opacity: 0, y: 40 }}

@@ -23,7 +23,13 @@ export default function RegistrationForm() {
           name: data.name,
           phone: data.phone,
           facebookASK: data.facebookASK,
+          facebookPost: data.facebookPost,
+          friendsAskF: data.friendsAskF,
+          sharePostF: data.sharePostF,
           instagramASK: data.instagramASK,
+          instagramPost: data.instagramPost,
+          friendsAskI: data.friendsAskI,
+          sharePostI: data.sharePostI,
           instagramHandle: data.instagramHandle,
           facebookProfile: data.facebookProfile,
           city: data.city,
@@ -42,7 +48,7 @@ export default function RegistrationForm() {
   };
 
   return (
-    <section className="w-[70%] mx-auto bg-[#5A9690] shadow-md rounded-2xl p-6 mt-5">
+    <section className="md:w-[75%] sm:w-[100%] mx-auto bg-[#5A9690] shadow-md rounded-2xl p-6 md:mt-5 sm:mt-6">
       <h2 className="text-2xl font-bold mb-4 text-center text-[#E0D9D9]">Register for the Giveaway</h2>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -97,6 +103,60 @@ export default function RegistrationForm() {
         <div>
           <input
             type="text"
+            placeholder="Have you liked our last post on Facebook?"
+            className="w-full border rounded h-12 p-5 text-[#E0D9D9] font-semibold outline-none"
+            {...register("facebookPost", {
+              required: "Required",
+              pattern: {
+                value: /^yes$/i,
+                message: "Like first to continue. Write Yes if already liked.",
+              },
+            })}
+          />
+          {errors.facebookPost && (
+            <p className="text-white text-sm mt-1 font-semibold">{errors.facebookPost.message}</p>
+          )}
+        </div>
+
+        <div>
+          <input
+            type="text"
+            placeholder="Have you mentioned 3 friends on last post on Facebook?"
+            className="w-full border rounded h-16 p-3 text-[#E0D9D9] font-semibold outline-none sm:text-base leading-2"
+            {...register("friendsAskF", {
+              required: "Required",
+              pattern: {
+                value: /^yes$/i,
+                message: "Mention first to continue. Write Yes if already mentioned.",
+              },
+            })}
+          />
+          {errors.friendsAskF && (
+            <p className="text-white text-sm mt-1 font-semibold">{errors.friendsAskF.message}</p>
+          )}
+        </div>
+
+        <div>
+          <input
+            type="text"
+            placeholder="Have you shared our last post on Facebook?"
+            className="w-full border rounded h-12 p-5 text-[#E0D9D9] font-semibold outline-none"
+            {...register("sharePostF", {
+              required: "Required",
+              pattern: {
+                value: /^yes$/i,
+                message: "Share first to continue. Write Yes if already shared.",
+              },
+            })}
+          />
+          {errors.sharePostF && (
+            <p className="text-white text-sm mt-1 font-semibold">{errors.sharePostF.message}</p>
+          )}
+        </div>
+
+        <div>
+          <input
+            type="text"
             placeholder="Have you followed us on Instagram?"
             className="w-full border rounded h-12 p-5 text-[#E0D9D9] font-semibold outline-none"
             {...register("instagramASK", {
@@ -109,6 +169,60 @@ export default function RegistrationForm() {
           />
           {errors.instagramASK && (
             <p className="text-white text-sm mt-1 font-semibold">{errors.instagramASK.message}</p>
+          )}
+        </div>
+
+        <div>
+          <input
+            type="text"
+            placeholder="Have you liked our last post on Instagram?"
+            className="w-full border rounded h-12 p-5 text-[#E0D9D9] font-semibold outline-none"
+            {...register("instagramPost", {
+              required: "Required",
+              pattern: {
+                value: /^yes$/i,
+                message: "Like first to continue. Write Yes if already liked.",
+              },
+            })}
+          />
+          {errors.instagramPost && (
+            <p className="text-white text-sm mt-1 font-semibold">{errors.instagramPost.message}</p>
+          )}
+        </div>
+
+         <div>
+          <input
+            type="text"
+            placeholder="Have you mentioned 3 friends on last post on Instagram?"
+            className="w-full border rounded h-16 p-3 text-[#E0D9D9] font-semibold outline-none sm:text-base leading-2"
+            {...register("friendsAskI", {
+              required: "Required",
+              pattern: {
+                value: /^yes$/i,
+                message: "Mention first to continue. Write Yes if already mentioned.",
+              },
+            })}
+          />
+          {errors.friendsAskI && (
+            <p className="text-white text-sm mt-1 font-semibold">{errors.friendsAskI.message}</p>
+          )}
+        </div>
+
+         <div>
+          <input
+            type="text"
+            placeholder="Have you shared our last post on Instagram?"
+            className="w-full border rounded h-12 p-5 text-[#E0D9D9] font-semibold outline-none"
+            {...register("sharePostI", {
+              required: "Required",
+              pattern: {
+                value: /^yes$/i,
+                message: "Share first to continue. Write Yes if already shared.",
+              },
+            })}
+          />
+          {errors.sharePostI && (
+            <p className="text-white text-sm mt-1 font-semibold">{errors.sharePostI.message}</p>
           )}
         </div>
 
@@ -167,7 +281,7 @@ export default function RegistrationForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className={`w-full text-white rounded-lg py-2 transition-colors ${isSubmitting
+          className={`w-full text-white rounded-lg py-2 transition-colors h-10 ${isSubmitting
             ? "bg-blue-300 cursor-not-allowed"
             : "bg-blue-500 hover:bg-blue-600"
             }`}

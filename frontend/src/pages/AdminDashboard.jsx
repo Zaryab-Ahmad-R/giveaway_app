@@ -211,6 +211,12 @@ export default function AdminDashboard() {
                   <th className="px-4 py-3 text-left">City</th>
                   <th className="px-4 py-3 text-left">Instagram</th>
                   <th className="px-4 py-3 text-left">Facebook</th>
+                  <th className="px-4 py-3 text-left">PostF</th>
+                  <th className="px-4 py-3 text-left">PostI</th>
+                  <th className="px-4 py-3 text-left">MentionF</th>
+                  <th className="px-4 py-3 text-left">MentionI</th>
+                  <th className="px-4 py-3 text-left">ShareF</th>
+                  <th className="px-4 py-3 text-left">ShareI</th>
                 </tr>
               </thead>
               <tbody>
@@ -221,6 +227,12 @@ export default function AdminDashboard() {
                     <td className="px-4 py-2">{u.city}</td>
                     <td className="px-4 py-2">{u.instagramHandle}</td>
                     <td className="px-4 py-2">{u.facebookProfile}</td>
+                    <td className="px-4 py-2">{u.facebookPost}</td>
+                    <td className="px-4 py-2">{u.instagramPost}</td>
+                    <td className="px-4 py-2">{u.friendsAskF}</td>
+                    <td className="px-4 py-2">{u.friendsAskI}</td>
+                    <td className="px-4 py-2">{u.sharePostF}</td>
+                    <td className="px-4 py-2">{u.sharePostI}</td>
                   </tr>
                 ))}
               </tbody>

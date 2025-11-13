@@ -3,3 +3,15 @@
     padding: 0;
     box-sizing: border-box;
 }
+input::placeholder {
+  font-size: 14px;        /* Smaller font for mobile */
+  white-space: normal;    /* Allow placeholder to wrap (works on most mobile browsers) */
+  line-height: 1.1;
+}
+
+/* Prevent mobile browsers from shrinking or hiding placeholder */
+input {
+  min-width: 100%;        /* Full width on mobile */
+  box-sizing: border-box; /* Prevent overflow */
+  overflow: hidden;       /* Avoid cutting text */
+}

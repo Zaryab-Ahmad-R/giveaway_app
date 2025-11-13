@@ -162,7 +162,7 @@ export default function ClaimPrize() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`w-full text-white rounded-lg py-5 transition-colors ${isSubmitting
+              className={`w-full text-white rounded-lg py-5 transition-colors h-10 ${isSubmitting
                   ? "bg-blue-300 cursor-not-allowed"
                   : "bg-blue-500 hover:bg-blue-600"
                 }`}

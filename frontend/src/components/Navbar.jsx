@@ -17,7 +17,7 @@ const Navbar = () => {
         <>
             <nav className="sticky top-2 z-50 bg-white shadow-md w-[90%] mx-auto border-2 border-transparent border-solid h-20 rounded-md flex justify-around items-center">
                 <div className="logo-container">
-                    <img src={logo} alt="logo" className="h-20 w-[100px] scale-110" />
+                    <img  src={logo} alt="logo" className="h-20 w-[100px] scale-110" />
                 </div>
 
                 <ul className="hidden md:flex justify-center items-center gap-6 list-none font-bold text-[#2F5755]">

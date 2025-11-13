@@ -50,7 +50,13 @@ router.post("/", async (req, res) => {
       name,
       phone,
       facebookASK,
+      facebookPost,
+      friendsAskF,
+      sharePostF,
       instagramASK,
+      instagramPost,
+      friendsAskI,
+      sharePostI,
       instagramHandle,
       facebookProfile,
       city,
@@ -61,7 +67,13 @@ router.post("/", async (req, res) => {
       !name ||
       !phone ||
       !facebookASK ||
+      !facebookPost ||
+      !friendsAskF ||
+      !sharePostF ||
       !instagramASK ||
+      !instagramPost ||
+      !friendsAskI ||
+      !sharePostI ||
       !instagramHandle ||
       !facebookProfile ||
       !city
@@ -84,7 +96,13 @@ router.post("/", async (req, res) => {
       name,
       phone,
       facebookASK,
+      facebookPost,
+      friendsAskF,
+      sharePostF,
       instagramASK,
+      instagramPost,
+      friendsAskI,
+      sharePostI,
       instagramHandle,
       facebookProfile,
       city,
