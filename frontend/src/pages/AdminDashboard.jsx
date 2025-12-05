@@ -204,12 +204,12 @@ export default function AdminDashboard() {
               </button>
             </div>
             <div className="flex justify-center mb-4">
-            <button
-              onClick={pickWinner}
-              className="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded-lg font-semibold h-9 w-[180px]"
-            >
-              Pick Random Winner
-            </button>
+              <button
+                onClick={pickWinner}
+                className="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded-lg font-semibold h-9 w-[180px]"
+              >
+                Pick Random Winner
+              </button>
             </div>
           </div>
 
@@ -289,8 +289,6 @@ export default function AdminDashboard() {
             {winner && (
               <div className="text-center space-y-2">
                 <p><strong>Name:</strong> {winner.name}</p>
-                <p><strong>Phone:</strong> {winner.phone}</p>
-                <p><strong>City:</strong> {winner.city}</p>
                 <p><strong>Instagram Handle:</strong> {winner.instagramHandle}</p>
                 <p><strong>Facebook Profile:</strong> {winner.facebookProfile}</p>
                 <p><strong>TikTok Profile:</strong> {winner.tiktokProfile}</p>
