@@ -49,15 +49,16 @@ router.post("/", async (req, res) => {
     const {
       name,
       phone,
-      facebookASK,
-      facebookPost,
-      friendsAskF,
-      sharePostF,
-      instagramASK,
-      instagramPost,
-      friendsAskI,
-      sharePostI,
+      // facebookASK,
+      // facebookPost,
+      // friendsAskF,
+      // sharePostF,
+      // instagramASK,
+      // instagramPost,
+      // friendsAskI,
+      // sharePostI,
       instagramHandle,
+      tiktokProfile,
       facebookProfile,
       city,
     } = req.body;
@@ -66,14 +67,15 @@ router.post("/", async (req, res) => {
     if (
       !name ||
       !phone ||
-      !facebookASK ||
-      !facebookPost ||
-      !friendsAskF ||
-      !sharePostF ||
-      !instagramASK ||
-      !instagramPost ||
-      !friendsAskI ||
-      !sharePostI ||
+      // !facebookASK ||
+      // !facebookPost ||
+      // !friendsAskF ||
+      // !sharePostF ||
+      // !instagramASK ||
+      // !instagramPost ||
+      // !friendsAskI ||
+      // !sharePostI ||
+      !tiktokProfile ||
       !instagramHandle ||
       !facebookProfile ||
       !city
@@ -95,14 +97,15 @@ router.post("/", async (req, res) => {
     const user = await User.create({
       name,
       phone,
-      facebookASK,
-      facebookPost,
-      friendsAskF,
-      sharePostF,
-      instagramASK,
-      instagramPost,
-      friendsAskI,
-      sharePostI,
+      // facebookASK,
+      // facebookPost,
+      // friendsAskF,
+      // sharePostF,
+      // instagramASK,
+      // instagramPost,
+      // friendsAskI,
+      // sharePostI,
+      tiktokProfile,
       instagramHandle,
       facebookProfile,
       city,

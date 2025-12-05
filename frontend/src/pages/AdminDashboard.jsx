@@ -14,6 +14,7 @@ export default function AdminDashboard() {
   const [users, setUsers] = useState([]);
   const [claims, setClaims] = useState([]);
   const [winner, setWinner] = useState(null);
+  const [showFullNumbers, setShowFullNumbers] = useState(false);
   const [stats, setStats] = useState({
     totalUsers: 0,
     totalClaims: 0,
@@ -116,12 +117,12 @@ export default function AdminDashboard() {
 
   return (
     <section className="min-h-screen bg-[#5A9690] text-white p-8">
-      <h1 className="text-3xl font-bold mb-6 text-center">Admin Dashboard</h1>
+      <h1 className="text-3xl font-bold mb-6 text-center font-[helvetica] underline">Admin Dashboard</h1>
 
-      <div className="logut-button flex justify-end mr-3 p-2.5 px-8">
+      <div className="logut-button flex justify-end  p-2.5 px-8 max-w-[98%] mb-1">
         <button
           onClick={logout}
-          className="bg-red-500 hover:bg-red-600 px-8 py-2 rounded-lg text-white font-semibold transition"
+          className="bg-red-500 hover:bg-red-600 p-2 rounded-lg text-white font-semibold transition mb-1 h-[30px] w-[80px]"
         >
           Logout
         </button>
@@ -172,19 +173,19 @@ export default function AdminDashboard() {
         <Tabs.List className="flex justify-center gap-4 mb-6">
           <Tabs.Trigger
             value="users"
-            className="px-4 py-2 bg-blue-600 rounded-lg font-semibold data-[state=active]:bg-blue-800"
+            className="px-4 py-2 bg-blue-600 rounded-lg font-semibold data-[state=active]:bg-blue-800 w-[150px] h-[35px]"
           >
             Registered Users
           </Tabs.Trigger>
           <Tabs.Trigger
             value="claims"
-            className="px-4 py-2 bg-blue-600 rounded-lg font-semibold data-[state=active]:bg-blue-800"
+            className="px-4 py-2 bg-blue-600 rounded-lg font-semibold data-[state=active]:bg-blue-800 w-[100px] h-[35px]"
           >
             Prize Claims
           </Tabs.Trigger>
           <Tabs.Trigger
             value="settings"
-            className="px-4 py-2 bg-blue-600 rounded-lg font-semibold data-[state=active]:bg-blue-800"
+            className="px-4 py-2 bg-blue-600 rounded-lg font-semibold data-[state=active]:bg-blue-800 w-[100px] h-[35px]"
           >
             Settings
           </Tabs.Trigger>
@@ -192,35 +193,47 @@ export default function AdminDashboard() {
 
         {/* USERS TAB */}
         <Tabs.Content value="users">
-          <div className="flex justify-between items-center mb-4">
-            <h2 className="text-xl font-semibold">All Registered Users</h2>
+          <h1 className="text-2xl font-semibold underline font-[helvetica]">All Registered Users</h1>
+          <div className="flex justify-end items-center mb-4 gap-3">
+            <div className="flex justify-center mb-4">
+              <button
+                onClick={() => setShowFullNumbers(!showFullNumbers)}
+                className="p-1.5 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 h-9 w-[150px]"
+              >
+                {showFullNumbers ? "Hide Full Numbers" : "Show Full Numbers"}
+              </button>
+            </div>
+            <div className="flex justify-center mb-4">
             <button
               onClick={pickWinner}
-              className="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded-lg font-semibold"
+              className="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded-lg font-semibold h-9 w-[180px]"
             >
-              🎯 Pick Random Winner
+              Pick Random Winner
             </button>
+            </div>
           </div>
 
           <div className="overflow-x-auto">
-            <table className="min-w-full bg-[#3f7a74] rounded-lg overflow-hidden">
+            <table className="w-[98%] mx-auto bg-[#3f7a74] rounded-lg overflow-hidden">
               <thead className="bg-[#2d5c57]">
                 <tr>
-                  <th className="px-4 py-3 text-left">Name</th>
-                  <th className="px-4 py-3 text-left">Phone</th>
-                  <th className="px-4 py-3 text-left">City</th>
-                  <th className="px-4 py-3 text-left">Instagram</th>
-                  <th className="px-4 py-3 text-left">Facebook</th>
+                  <th className="p-2 text-left">Name</th>
+                  <th className="p-2 text-left">Phone</th>
+                  <th className="p-2 text-left">City</th>
+                  <th className="p-2 text-left">Instagram</th>
+                  <th className="p-2 text-left">Facebook</th>
+                  <th className="p-2 text-left">TikTok</th>
                 </tr>
               </thead>
               <tbody>
                 {users.map((u) => (
                   <tr key={u.id} className="border-t border-gray-600">
-                    <td className="px-4 py-2">{u.name}</td>
-                    <td className="px-4 py-2">{u.phone}</td>
+                    <td className="px-4">{u.name}</td>
+                    <td className="px-4 py-2">{showFullNumbers && u.fullPhone ? u.fullPhone : u.phone}</td>
                     <td className="px-4 py-2">{u.city}</td>
                     <td className="px-4 py-2">{u.instagramHandle}</td>
                     <td className="px-4 py-2">{u.facebookProfile}</td>
+                    <td className="px-4 py-2">{u.tiktokProfile}</td>
                   </tr>
                 ))}
               </tbody>
@@ -280,6 +293,7 @@ export default function AdminDashboard() {
                 <p><strong>City:</strong> {winner.city}</p>
                 <p><strong>Instagram Handle:</strong> {winner.instagramHandle}</p>
                 <p><strong>Facebook Profile:</strong> {winner.facebookProfile}</p>
+                <p><strong>TikTok Profile:</strong> {winner.tiktokProfile}</p>
               </div>
             )}
             <div className="text-center mt-6">

@@ -1,7 +1,8 @@
 import React from 'react'
 import logo from '../assets/logo.png'
-import { FaFacebook } from "react-icons/fa";
+import { FaFacebook, } from "react-icons/fa";
 import { FaInstagram, FaYoutube, FaTimes, FaBars } from "react-icons/fa";
+import { FaTiktok } from "react-icons/fa6";
 import { useState } from 'react';
 import { Link,NavLink } from 'react-router-dom'
 
@@ -35,7 +36,7 @@ const Navbar = () => {
                         <NavLink to='/claim'>
                         Claim Prize
                         </NavLink>
-                        </li>
+                    </li>
                 </ul>
 
                 <div className="social-links flex justify-center items-center gap-3">
@@ -47,6 +48,9 @@ const Navbar = () => {
                     </Link>
                     <Link to="https://www.youtube.com/@Zainverse621" target="_blank" rel="noreferrer">
                         <FaYoutube size={35} />
+                    </Link>
+                    <Link to="https://www.tiktok.com/@zainverse621?_r=1&_t=ZN-91yaczARnuQ" target="_blank" rel="noreferrer">
+                        <FaTiktok size={35} />
                     </Link>
                 </div>
 
@@ -82,21 +86,21 @@ const Navbar = () => {
                     <NavLink
                         to='/'
                         onClick={closeMenu}
-                        className="text-lg font-bold text-[#2F5755] hover:text-[#5A9690]"
+                        className="text-lg font-bold text-[#2F5755] hover:text-[#5A9690] ml-[10px]"
                     >
                         Home
                     </NavLink>
                     <NavLink
                         to='/registration'
                         onClick={closeMenu}
-                        className="text-lg font-bold text-[#2F5755] hover:text-[#5A9690]"
+                        className="text-lg font-bold text-[#2F5755] hover:text-[#5A9690] ml-[10px]"
                     >
                         Registration
                     </NavLink>
                     <NavLink
                         to='/claim'
                         onClick={closeMenu}
-                        className="text-lg font-bold text-[#2F5755] hover:text-[#5A9690]"
+                        className="text-lg font-bold text-[#2F5755] hover:text-[#5A9690] ml-[10px]"
                     >
                         Claim Prize
                     </NavLink>

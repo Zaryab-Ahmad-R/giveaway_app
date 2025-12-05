@@ -22,14 +22,16 @@ export default function RegistrationForm() {
         body: JSON.stringify({
           name: data.name,
           phone: data.phone,
-          facebookASK: data.facebookASK,
-          facebookPost: data.facebookPost,
-          friendsAskF: data.friendsAskF,
-          sharePostF: data.sharePostF,
-          instagramASK: data.instagramASK,
-          instagramPost: data.instagramPost,
-          friendsAskI: data.friendsAskI,
-          sharePostI: data.sharePostI,
+          // facebookASK: data.facebookASK,
+          // facebookPost: data.facebookPost,
+          // friendsAskF: data.friendsAskF,
+          // sharePostF: data.sharePostF,
+          // instagramASK: data.instagramASK,
+          // instagramPost: data.instagramPost,
+          // friendsAskI: data.friendsAskI,
+          // sharePostI: data.sharePostI,
+          // tiktokASK: data.tiktokASK,
+          tiktokProfile: data.tiktokProfile, 
           instagramHandle: data.instagramHandle,
           facebookProfile: data.facebookProfile,
           city: data.city,
@@ -122,7 +124,7 @@ export default function RegistrationForm() {
           <input
             type="text"
             placeholder="Have you mentioned 3 friends on last post on Facebook?"
-            className="w-full border rounded h-12 p-3 text-[#E0D9D9] font-semibold outline-none sm:text-base leading-2"
+            className="w-full border rounded h-12 p-3 text-[#E0D9D9] font-semibold outline-none sm:text-base"
             {...register("friendsAskF", {
               required: "Required",
               pattern: {
@@ -223,6 +225,95 @@ export default function RegistrationForm() {
           />
           {errors.sharePostI && (
             <p className="text-white text-sm mt-1 font-semibold">{errors.sharePostI.message}</p>
+          )}
+        </div>
+
+         <div>
+          <input
+            type="text"
+            placeholder="Have you followed us on Tiktok?"
+            className="w-full border rounded h-12 p-5 text-[#E0D9D9] font-semibold outline-none"
+            {...register("tiktokASK", {
+              required: "Required",
+              pattern: {
+                value: /^yes$/i,
+                message: "Follow first to continue. Write Yes if already followed.",
+              },
+            })}
+          />
+          {errors.tiktokASK && (
+            <p className="text-white text-sm mt-1 font-semibold">{errors.tiktokASK.message}</p>
+          )}
+        </div>
+
+         <div>
+          <input
+            type="text"
+            placeholder="Have you liked our last post on Tiktok?"
+            className="w-full border rounded h-12 p-5 text-[#E0D9D9] font-semibold outline-none"
+            {...register("tiktokPost", {
+              required: "Required",
+              pattern: {
+                value: /^yes$/i,
+                message: "Like first to continue. Write Yes if already liked.",
+              },
+            })}
+          />
+          {errors.tiktokPost && (
+            <p className="text-white text-sm mt-1 font-semibold">{errors.tiktokPost.message}</p>
+          )}
+        </div>
+
+         <div>
+          <input
+            type="text"
+            placeholder="Have you mentioned 3 friends on last post on Tiktok?"
+            className="w-full border rounded h-12 p-5 text-[#E0D9D9] font-semibold outline-none"
+            {...register("friendsAskT", {
+              required: "Required",
+              pattern: {
+                value: /^yes$/i,
+                message: "Mention first to continue. Write Yes if already mentioned.",
+              },
+            })}
+          />
+          {errors.friendsAskT && (
+            <p className="text-white text-sm mt-1 font-semibold">{errors.friendsAskT.message}</p>
+          )}
+        </div>
+
+         <div>
+          <input
+            type="text"
+            placeholder="Have you shared our last post on Tiktok?"
+            className="w-full border rounded h-12 p-5 text-[#E0D9D9] font-semibold outline-none"
+            {...register("sharePostT", {
+              required: "Required",
+              pattern: {
+                value: /^yes$/i,
+                message: "Share first to continue. Write Yes if already shared.",
+              },
+            })}
+          />
+          {errors.sharePostT && (
+            <p className="text-white text-sm mt-1 font-semibold">{errors.sharePostT.message}</p>
+          )}
+        </div>
+
+        <div>
+          <input
+            type="text"
+            placeholder="Your TikTok Profile"
+            className="w-full border rounded h-12 p-5 text-[#E0D9D9] font-semibold outline-none"
+            {...register("tiktokProfile", {
+              required: "Required",
+              pattern: {
+                message: "Write your TikTok Profile.",
+              },
+            })}
+          />
+          {errors.tiktokProfile && (
+            <p className="text-white text-sm mt-1 font-semibold">{errors.tiktokProfile.message}</p>
           )}
         </div>
 

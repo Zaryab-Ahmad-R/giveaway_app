@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaTiktok } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -16,6 +17,9 @@ const Footer = () => {
                     </Link>
                     <Link to="https://www.youtube.com/@Zainverse621" target="_blank" rel="noreferrer">
                         <FaYoutube size={35} />
+                    </Link>
+                    <Link to="https://www.tiktok.com/@zainverse621?_r=1&_t=ZN-91yaczARnuQ" target="_blank" rel="noreferrer">
+                        <FaTiktok size={35} />
                     </Link>
                 </div>
             </footer>

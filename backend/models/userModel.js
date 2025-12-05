@@ -13,44 +13,49 @@ const userSchema = new mongoose.Schema(
       unique: true,
       trim: true,
     },
-    facebookASK: {
+    // facebookASK: {
+    //   type: String,
+    //   required: [true, "Facebook follow confirmation is required"],
+    //   trim: true,
+    // },
+    // facebookPost: {
+    //   type: String,
+    //   required: [true, "Facebook post confirmation is required"],
+    //   trim: true,
+    // },
+    // friendsAskF: {
+    //   type: String,
+    //   required: [true, "Friends confirmation is required"],
+    //   trim: true,
+    // },
+    // sharePostF: {
+    //   type: String,
+    //   required: [true, "Post confirmation is required"],
+    //   trim: true,
+    // },
+    // instagramASK: {
+    //   type: String,
+    //   required: [true, "Instagram follow confirmation is required"],
+    //   trim: true,
+    // },
+    // instagramPost: {
+    //   type: String,
+    //   required: [true, "Instagram post confirmation is required"],
+    //   trim: true,
+    // },
+    // friendsAskI: {
+    //   type: String,
+    //   required: [true, "Friends confirmation is required"],
+    //   trim: true,
+    // },
+    // sharePostI: {
+    //   type: String,
+    //   required: [true, "Share confirmation is required"],
+    //   trim: true,
+    // },
+    tiktokProfile: {
       type: String,
-      required: [true, "Facebook follow confirmation is required"],
-      trim: true,
-    },
-    facebookPost: {
-      type: String,
-      required: [true, "Facebook post confirmation is required"],
-      trim: true,
-    },
-    friendsAskF: {
-      type: String,
-      required: [true, "Friends confirmation is required"],
-      trim: true,
-    },
-    sharePostF: {
-      type: String,
-      required: [true, "Post confirmation is required"],
-      trim: true,
-    },
-    instagramASK: {
-      type: String,
-      required: [true, "Instagram follow confirmation is required"],
-      trim: true,
-    },
-    instagramPost: {
-      type: String,
-      required: [true, "Instagram post confirmation is required"],
-      trim: true,
-    },
-    friendsAskI: {
-      type: String,
-      required: [true, "Friends confirmation is required"],
-      trim: true,
-    },
-    sharePostI: {
-      type: String,
-      required: [true, "Share confirmation is required"],
+      required: [true, "Tiktok profile is required"],
       trim: true,
     },
     instagramHandle: {

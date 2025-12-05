@@ -7,27 +7,45 @@ const router = express.Router();
 
 router.use(verifyAdmin);
 
+function maskPhone(phone) {
+  if (!phone || phone.length < 5) return phone;
+  const visibleStart = phone.slice(0, 4);
+  const visibleEnd = phone.slice(-2);
+  return `${visibleStart}*****${visibleEnd}`;
+}
+
+
 // 🧩 Get all registered users
 router.get("/users", async (req, res) => {
   try {
     const users = await User.find().sort({ createdAt: -1 });
-    res.json(users);
+    const maskedUsers = users.map(u => ({
+      ...u._doc,
+      fullPhone: u.phone,
+      phone: maskPhone(u.phone),
+    }));
+    res.json(maskedUsers);
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: "Failed to fetch users" });
+    res.status(500).json({ message: "Failed to load users" });
   }
 });
+
 
 // 🎁 Get all prize claim entries
 router.get("/claims", async (req, res) => {
   try {
     const claims = await PrizeClaim.find().sort({ createdAt: -1 });
-    res.json(claims);
+    const maskedClaims = claims.map(c => ({
+      ...c._doc,
+      fullPhone: c.phone,
+      phone: maskPhone(c.phone),
+    }));
+    res.json(maskedClaims);
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: "Failed to fetch claims" });
+    res.status(500).json({ message: "Failed to load claims" });
   }
 });
+
 
 // 🏆 Pick a random winner from users
 router.get("/users/random", async (req, res) => {
