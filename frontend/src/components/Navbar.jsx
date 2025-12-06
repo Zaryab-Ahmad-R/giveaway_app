@@ -23,7 +23,7 @@ const Navbar = () => {
 
                 <ul className="hidden md:flex justify-center items-center gap-6 list-none font-bold text-[#2F5755]">
                     <li>
-                        <NavLink to='/'>
+                        <NavLink to='/home'>
                         Home
                       </NavLink>
                     </li>
@@ -84,7 +84,7 @@ const Navbar = () => {
 
                     {/* Menu Links */}
                     <NavLink
-                        to='/'
+                        to='/home'
                         onClick={closeMenu}
                         className="text-lg font-bold text-[#2F5755] hover:text-[#5A9690] ml-[10px]"
                     >
